@@ -6,7 +6,6 @@ data class WantedParametersBuilder(
     val email: Boolean = false,
     val birthday: Boolean = false
 ) {
-    //TODO find a better way to build the string
     override fun toString(): String {
         var string = ""
         if (name)

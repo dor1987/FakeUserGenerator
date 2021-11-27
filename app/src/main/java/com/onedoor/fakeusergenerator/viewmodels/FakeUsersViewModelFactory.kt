@@ -16,5 +16,4 @@ class FakeUsersViewModelFactory(
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
-
 }
