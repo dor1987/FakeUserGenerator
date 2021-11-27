@@ -1,6 +1,6 @@
 package com.onedoor.fakeusergenerator.database.remote
 
-import com.onedoor.fakeusergenerator.FakeUser
+import com.onedoor.fakeusergenerator.models.FakeUser
 
 class  RemoteDataBaseMapper {
     fun toObject(response: GetFakeUsersResponse): List<FakeUser> {

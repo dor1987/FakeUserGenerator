@@ -1,6 +1,6 @@
 package com.onedoor.fakeusergenerator.database.local
 
-import com.onedoor.fakeusergenerator.FakeUser
+import com.onedoor.fakeusergenerator.models.FakeUser
 
 class LocalDataBaseMapper {
     fun toObject(localFakeUserDataList: List<LocalFakeUser>): List<FakeUser> {

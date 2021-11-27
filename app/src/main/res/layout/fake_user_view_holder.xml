@@ -6,7 +6,7 @@
     <data>
         <variable
             name="fake_user"
-            type="com.onedoor.fakeusergenerator.FakeUser" />
+            type="com.onedoor.fakeusergenerator.models.FakeUser" />
     </data>
 
     <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"

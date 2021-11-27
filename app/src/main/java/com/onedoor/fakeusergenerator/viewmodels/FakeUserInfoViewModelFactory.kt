@@ -1,7 +1,8 @@
-package com.onedoor.fakeusergenerator
+package com.onedoor.fakeusergenerator.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.onedoor.fakeusergenerator.models.FakeUser
 
 class FakeUserInfoViewModelFactory(
     private val fakeUser: FakeUser

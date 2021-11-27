@@ -1,4 +1,4 @@
-package com.onedoor.fakeusergenerator
+package com.onedoor.fakeusergenerator.viewmodels
 
 import android.app.Application
 import android.content.Context
@@ -13,10 +13,10 @@ import com.onedoor.fakeusergenerator.database.local.LocalDataBaseMapper
 import com.onedoor.fakeusergenerator.database.remote.NetworkLayer.apiClient
 import com.onedoor.fakeusergenerator.database.remote.RemoteDataBaseMapper
 import com.onedoor.fakeusergenerator.database.remote.WantedParametersBuilder
+import com.onedoor.fakeusergenerator.models.FakeUser
 import com.onedoor.fakeusergenerator.utils.SHARED_PREF
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.lang.Exception
 import kotlin.random.Random
 

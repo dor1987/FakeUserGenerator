@@ -8,7 +8,7 @@
 
         <variable
             name="fakeUserInfoViewModel"
-            type="com.onedoor.fakeusergenerator.FakeUserInfoFragmentViewModel" />
+            type="com.onedoor.fakeusergenerator.viewmodels.FakeUserInfoFragmentViewModel" />
     </data>
 
 

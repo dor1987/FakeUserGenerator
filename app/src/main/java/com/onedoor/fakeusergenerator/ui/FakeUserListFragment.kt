@@ -9,8 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.onedoor.fakeusergenerator.FakeUserListFragmentViewModel
-import com.onedoor.fakeusergenerator.FakeUsersViewModelFactory
+import com.onedoor.fakeusergenerator.viewmodels.FakeUserListFragmentViewModel
+import com.onedoor.fakeusergenerator.viewmodels.FakeUsersViewModelFactory
 import com.onedoor.fakeusergenerator.R
 import com.onedoor.fakeusergenerator.database.local.FakeUsersLocalDataBase
 import com.onedoor.fakeusergenerator.databinding.FragmentMainListBinding

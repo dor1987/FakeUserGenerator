@@ -1,4 +1,4 @@
-package com.onedoor.fakeusergenerator
+package com.onedoor.fakeusergenerator.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

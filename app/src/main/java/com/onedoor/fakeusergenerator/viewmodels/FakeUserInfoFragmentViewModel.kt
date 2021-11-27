@@ -1,6 +1,7 @@
-package com.onedoor.fakeusergenerator
+package com.onedoor.fakeusergenerator.viewmodels
 
 import androidx.lifecycle.ViewModel
+import com.onedoor.fakeusergenerator.models.FakeUser
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*

@@ -8,7 +8,7 @@
 
         <variable
             name="fakeUSerListFragmentViewModel"
-            type="com.onedoor.fakeusergenerator.FakeUserListFragmentViewModel" />
+            type="com.onedoor.fakeusergenerator.viewmodels.FakeUserListFragmentViewModel" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout

@@ -1,6 +1,6 @@
 package com.onedoor.fakeusergenerator.database
 
-import com.onedoor.fakeusergenerator.FakeUser
+import com.onedoor.fakeusergenerator.models.FakeUser
 import com.onedoor.fakeusergenerator.database.local.Dao
 import com.onedoor.fakeusergenerator.database.local.LocalDataBaseMapper
 import com.onedoor.fakeusergenerator.database.remote.ApiClient

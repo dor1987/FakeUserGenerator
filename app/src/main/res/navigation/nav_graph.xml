@@ -25,6 +25,6 @@
         tools:layout="@layout/fragment_fake_user_info" >
         <argument
             android:name="fakeUser"
-            app:argType="com.onedoor.fakeusergenerator.FakeUser" />
+            app:argType="com.onedoor.fakeusergenerator.models.FakeUser" />
     </fragment>
 </navigation>

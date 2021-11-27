@@ -6,6 +6,7 @@ import androidx.databinding.BindingAdapter
 import cn.iwgang.countdownview.CountdownView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.onedoor.fakeusergenerator.models.FakeUser
 
 @BindingAdapter("first")
 fun TextView.setFirst(item: FakeUser) {

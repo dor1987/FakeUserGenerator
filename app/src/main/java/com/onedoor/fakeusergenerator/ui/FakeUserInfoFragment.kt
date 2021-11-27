@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.onedoor.fakeusergenerator.*
 import com.onedoor.fakeusergenerator.databinding.FragmentFakeUserInfoBinding
+import com.onedoor.fakeusergenerator.viewmodels.FakeUserInfoFragmentViewModel
+import com.onedoor.fakeusergenerator.viewmodels.FakeUserInfoViewModelFactory
 
 
 class FakeUserInfoFragment : Fragment(R.layout.fragment_fake_user_info) {

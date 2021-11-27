@@ -1,4 +1,4 @@
-package com.onedoor.fakeusergenerator
+package com.onedoor.fakeusergenerator.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

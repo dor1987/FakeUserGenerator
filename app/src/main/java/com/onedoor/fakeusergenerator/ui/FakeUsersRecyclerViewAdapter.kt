@@ -7,7 +7,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.onedoor.fakeusergenerator.databinding.FakeUserViewHolderBinding
-import com.onedoor.fakeusergenerator.FakeUser
+import com.onedoor.fakeusergenerator.models.FakeUser
 
 class FakeUsersRecyclerViewAdapter :
     ListAdapter<FakeUser, FakeUsersRecyclerViewAdapter.ViewHolder>(FakeUserDiffCallback()) {
