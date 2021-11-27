@@ -13,6 +13,7 @@ class FakeUserInfoFragmentViewModel(val fakeUser: FakeUser) :
         timeToBirthDayInMilli = getTimeUntilBirthDayInMil(fakeUser.date)
     }
 
+    //convert server date string format to milliseconds in long
     private fun getTimeUntilBirthDayInMil(rawBirthDay: String): Long {
         val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
         val outputFormat = SimpleDateFormat("dd/MM/yyyy")

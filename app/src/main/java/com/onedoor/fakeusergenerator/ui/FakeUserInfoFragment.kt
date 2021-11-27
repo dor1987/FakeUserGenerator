@@ -15,7 +15,6 @@ import com.onedoor.fakeusergenerator.viewmodels.FakeUserInfoViewModelFactory
 
 
 class FakeUserInfoFragment : Fragment(R.layout.fragment_fake_user_info) {
-
     private val args: FakeUserInfoFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -31,6 +30,7 @@ class FakeUserInfoFragment : Fragment(R.layout.fragment_fake_user_info) {
         val fakeUser = args.fakeUser
         val viewModelFactory = FakeUserInfoViewModelFactory(fakeUser)
 
+        //Gets the viewModel
         val fakeUserInfoViewModel =
             ViewModelProvider(this, viewModelFactory)[FakeUserInfoFragmentViewModel::class.java]
 

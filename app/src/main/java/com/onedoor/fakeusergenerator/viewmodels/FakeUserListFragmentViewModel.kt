@@ -30,6 +30,7 @@ class FakeUserListFragmentViewModel(dao: Dao, application: Application) :
 
     private val localMapper = LocalDataBaseMapper()
     private val remoteDataBaseMapper = RemoteDataBaseMapper()
+
     val isSwipeLoading = ObservableBoolean()
     val isInitLoading = ObservableBoolean()
 
@@ -41,6 +42,7 @@ class FakeUserListFragmentViewModel(dao: Dao, application: Application) :
     )
 
     private val sharedPref = application.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE)
+
     private val wantedParameters = WantedParametersBuilder(
         name = true,
         picture = true,
@@ -55,7 +57,7 @@ class FakeUserListFragmentViewModel(dao: Dao, application: Application) :
         loadData()
     }
 
-
+    //Check if there is data in localDB if yes bring it if no get data from server if fail send empty list
     private fun loadData() {
         viewModelScope.launch(Dispatchers.IO) {
             val fakeUserListFromLocalDataBase = repository.getFakeUsersFromLocalDataBase()
@@ -86,13 +88,17 @@ class FakeUserListFragmentViewModel(dao: Dao, application: Application) :
         }
     }
 
-    fun onRefresh() {
-        isSwipeLoading.set(true)
+    private fun incriminatePageNumber() {
         with(sharedPref.edit()) {
             putInt(pageSharedPrefKey, sharedPref.getInt(pageSharedPrefKey, 1) + 1)
             apply()
         }
+    }
 
+    //Gets data from server ,deleted localDB data, saving new data to localDB if error return emptylist
+    fun onRefresh() {
+        isSwipeLoading.set(true)
+        incriminatePageNumber()
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val fakeUserList = repository.getFakeUsersFromServer(
@@ -117,7 +123,7 @@ class FakeUserListFragmentViewModel(dao: Dao, application: Application) :
         }
     }
 
-
+    //Get seed saved seed, if there isn't one than create and return it
     private fun getSeed(): String {
         if (!sharedPref.contains(seedSharedPrefKey)) {
             with(sharedPref.edit()) {
@@ -128,6 +134,7 @@ class FakeUserListFragmentViewModel(dao: Dao, application: Application) :
         return sharedPref.getString(seedSharedPrefKey, "")!!
     }
 
+    //Generating personal seed
     private fun generateSeedKey(seedKeyLength: Int): String {
         val charPool: List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
         return (1..seedKeyLength)

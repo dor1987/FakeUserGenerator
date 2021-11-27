@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.findNavController()
     }
 
+    //For back press support
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }

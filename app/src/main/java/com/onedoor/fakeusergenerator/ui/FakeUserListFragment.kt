@@ -31,6 +31,7 @@ class FakeUserListFragment : Fragment(R.layout.fragment_main_list) {
         val dataSource = FakeUsersLocalDataBase.getInstance(application).getFakeUsersDao()
         val viewModelFactory = FakeUsersViewModelFactory(dataSource, application)
 
+        //Gets the viewModel
         val fakeUsersViewModel =
             ViewModelProvider(this, viewModelFactory)[FakeUserListFragmentViewModel::class.java]
 
@@ -39,12 +40,13 @@ class FakeUserListFragment : Fragment(R.layout.fragment_main_list) {
         val adapter = FakeUsersRecyclerViewAdapter()
         binding.list.adapter = adapter
 
+        //Observe to data changes
         fakeUsersViewModel.fakeUsers.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.submitList(it)
             }
         })
-
+        //Observe to errors
         fakeUsersViewModel.errors.observe(viewLifecycleOwner, Observer {
             it?.let {
                 Toast.makeText(context, "Request to server failed ", Toast.LENGTH_SHORT).show()

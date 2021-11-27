@@ -28,6 +28,7 @@ class FakeUsersRecyclerViewAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FakeUser) {
             binding.fakeUser = item
+            //When a View holder is clicked more to the info fragment and send args
             binding.root.setOnClickListener {
                 val action =
                     FakeUserListFragmentDirections.actionMainFragmentToFakeUserInfoFragment(item)
