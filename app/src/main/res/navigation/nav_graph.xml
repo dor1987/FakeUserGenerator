@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FakeUserListFragment">
+
+    <fragment
+        android:id="@+id/FakeUserListFragment"
+        android:name="com.onedoor.fakeusergenerator.ui.FakeUserListFragment"
+        android:label="fragment_main_list"
+        tools:layout="@layout/fragment_main_list" >
+        <action
+            android:id="@+id/action_mainFragment_to_fakeUserInfoFragment"
+            app:destination="@id/fakeUserInfoFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fakeUserInfoFragment"
+        android:name="com.onedoor.fakeusergenerator.ui.FakeUserInfoFragment"
+        android:label="fragment_fake_user_info"
+        tools:layout="@layout/fragment_fake_user_info" >
+        <argument
+            android:name="fakeUser"
+            app:argType="com.onedoor.fakeusergenerator.FakeUser" />
+    </fragment>
+</navigation>

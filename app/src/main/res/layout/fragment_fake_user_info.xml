@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fakeUserInfoViewModel"
+            type="com.onedoor.fakeusergenerator.FakeUserInfoFragmentViewModel" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/palette_Viridian_Green"
+        app:cardCornerRadius="30dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.FakeUserInfoFragment">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="User Information"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toTopOf="@+id/info_image_container"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </TextView>
+
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/info_image_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:cardCornerRadius="200dp"
+
+                card_view:layout_constraintBottom_toTopOf="@+id/info_title"
+                card_view:layout_constraintLeft_toLeftOf="parent"
+                card_view:layout_constraintRight_toRightOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:scaleType="centerCrop"
+                    app:largeImage="@{fakeUserInfoViewModel.fakeUser}"
+                    tools:src="@drawable/ic_launcher_background">
+
+                </ImageView>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/info_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/info_first"
+                app:layout_constraintTop_toBottomOf="@+id/info_image_container"
+                app:title="@{fakeUserInfoViewModel.fakeUser}"
+                tools:text="mr" />
+
+            <TextView
+                android:id="@+id/info_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:first="@{fakeUserInfoViewModel.fakeUser}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/info_title"
+                app:layout_constraintRight_toLeftOf="@+id/info_last"
+                app:layout_constraintTop_toBottomOf="@+id/info_image_container"
+                tools:text="dor" />
+
+            <TextView
+                android:id="@+id/info_last"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:last="@{fakeUserInfoViewModel.fakeUser}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/info_first"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info_image_container"
+                tools:text="ashush" />
+
+            <cn.iwgang.countdownview.CountdownView
+                android:id="@+id/info_birthday_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:countDown="@{fakeUserInfoViewModel.timeToBirthDayInMilli}"
+                app:isHideTimeBackground="false"
+                app:isShowDay="true"
+                app:isShowHour="true"
+                app:isShowMinute="true"
+                app:isShowSecond="true"
+                app:isTimeTextBold="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/info_title"
+                app:suffixDay="d"
+                app:suffixGravity="center"
+                app:suffixHour="h"
+                app:suffixMinute="m"
+                app:suffixSecond="s"
+                app:suffixTextColor="@color/white"
+                app:suffixTextSize="12sp"
+                app:timeBgColor="@color/palette_Granny_Smith_Apple"
+                app:timeBgRadius="4dp"
+                app:timeTextSize="32sp"
+
+                />
+            <!--
+                        app:onRefreshListener="@{() -> fakeUSerListFragmentViewModel.onRefresh()}"
+            -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
