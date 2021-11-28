@@ -7,7 +7,7 @@
         <import type="android.view.View"/>
 
         <variable
-            name="fakeUSerListFragmentViewModel"
+            name="fakeUserListFragmentViewModel"
             type="com.onedoor.fakeusergenerator.viewmodels.FakeUserListFragmentViewModel" />
     </data>
 
@@ -15,8 +15,8 @@
         android:id="@+id/swiperefresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:onRefreshListener="@{() -> fakeUSerListFragmentViewModel.onRefresh()}"
-        app:refreshing="@{fakeUSerListFragmentViewModel.isSwipeLoading}">
+        app:onRefreshListener="@{() -> fakeUserListFragmentViewModel.onRefresh()}"
+        app:refreshing="@{fakeUserListFragmentViewModel.isSwipeLoading}">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/loader"
-                android:visibility="@{fakeUSerListFragmentViewModel.isInitLoading() ? View.VISIBLE : View.GONE}"/>
+                android:visibility="@{fakeUserListFragmentViewModel.isInitLoading() ? View.VISIBLE : View.GONE}"/>
             />
 
             <androidx.recyclerview.widget.RecyclerView

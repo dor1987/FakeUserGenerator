@@ -35,7 +35,7 @@ class FakeUserListFragment : Fragment(R.layout.fragment_main_list) {
         val fakeUsersViewModel =
             ViewModelProvider(this, viewModelFactory)[FakeUserListFragmentViewModel::class.java]
 
-        binding.fakeUSerListFragmentViewModel = fakeUsersViewModel
+        binding.fakeUserListFragmentViewModel = fakeUsersViewModel
 
         val adapter = FakeUsersRecyclerViewAdapter()
         binding.list.adapter = adapter
